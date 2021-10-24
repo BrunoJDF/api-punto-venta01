@@ -1,26 +1,28 @@
-import { PartialType } from '@nestjs/swagger';
-import { IsDate, IsInt, IsNumber, IsPositive, IsString } from 'class-validator';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
+import { IsInt, IsNotEmpty, IsNumber, IsPositive, IsString } from 'class-validator';
 
 export class CreateProductDto {
+  @ApiProperty()
   @IsString()
+  @IsNotEmpty()
   description: string;
 
+  @ApiProperty()
   @IsNumber()
   @IsPositive()
+  @IsNotEmpty()
   price: number;
 
+  @ApiProperty()
   @IsString()
+  @IsNotEmpty()
   category: string;
 
+  @ApiProperty()
   @IsInt()
+  @IsNotEmpty()
   @IsPositive()
   stock: number;
-
-  @IsDate()
-  createDate: Date;
-
-  @IsDate()
-  lastUpdateDate: Date;
 }
 
-export class UpdateProdcutDto extends PartialType(CreateProductDto) {}
+export class UpdateProdcutDto extends PartialType(CreateProductDto) { }

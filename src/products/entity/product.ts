@@ -12,8 +12,8 @@ export class Product {
   category: string;
   @Column({ type: 'int' })
   stock: number;
-  @Column({ type: 'date' })
+  @Column({ type: 'date', name: 'create_date' })
   createDate: Date;
-  @Column({ type: 'date' })
+  @Column({ type: 'date', name: 'last_update_date' })
   lastUpdateDate: Date;
 }
