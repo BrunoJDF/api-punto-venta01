@@ -71,3 +71,17 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Dependencies
+
+@nestjs/typeorm
+@nestjs/config
+pg
+@types/pg
+typeorm
+@nestjs/swagger
+@nestjs/mapped-types
+class-validator
+class-transformer
+swagger-ui-express
