@@ -15,11 +15,13 @@ import config from 'src/config/config';
         const url = configService.postgresUrl;
         return {
           type: 'postgres',
+
           /*database: name,
           username: user,
           password,
           host,
           port,*/
+
           url,
           ssl: {
             rejectUnauthorized: false,
@@ -38,11 +40,13 @@ import config from 'src/config/config';
         const url = configService.postgresUrl;
 
         const client = new Client({
+
           /*database: name,
           user: user,
           password: password,
           host: host,
           port: port,*/
+
           connectionString: url,
           ssl: {
             rejectUnauthorized: false,
