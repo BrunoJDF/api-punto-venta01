@@ -19,8 +19,8 @@ import config from 'src/config/config';
           username: user,
           password,
           host,
-          port,
-          url,*/
+          port,*/
+          url,
           ssl: {
             rejectUnauthorized: false,
           },
