@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ParseIntPipe } from 'src/shared/parse-int.pipe';
 import { CreateProductDto, UpdateProdcutDto } from '../dto/product.dto';
@@ -27,5 +27,10 @@ export class ProductController {
   @Put(':id')
   updateProduct(@Param('id', ParseIntPipe) id: number, @Body() payload: UpdateProdcutDto) {
     return this.service.update(id, payload);
+  }
+
+  @Delete(':id')
+  deleteProduct(@Param('id', ParseIntPipe) id: number) {
+    return this.service.delete(id);
   }
 }
