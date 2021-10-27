@@ -16,16 +16,16 @@ import config from 'src/config/config';
         return {
           type: 'postgres',
 
-          database: name,
+          /*database: name,
           username: user,
           password,
           host,
-          port,
+          port,*/
 
-          /*url,
+          url,
           ssl: {
             rejectUnauthorized: false,
-          },*/
+          },
           synchronize: true,
           autoLoadEntities: true,
         };
@@ -41,16 +41,16 @@ import config from 'src/config/config';
 
         const client = new Client({
 
-          database: name,
+          /*database: name,
           user: user,
           password: password,
           host: host,
-          port: port,
+          port: port,*/
 
-          /*connectionString: url,
+          connectionString: url,
           ssl: {
             rejectUnauthorized: false,
-          },*/
+          },
         });
 
         client.connect();
