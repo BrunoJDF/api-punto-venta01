@@ -1,8 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, UseInterceptors } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ParseIntPipe } from 'src/shared/parse-int.pipe';
-import { DataResponseInterceptor } from '../constants/data-response-interceptor.interceptor';
-import { ExceptionResponseInterceptor } from '../constants/exception-response.interceptor';
+import { DataResponseInterceptor } from '../interceptors/data-response-interceptor.interceptor';
 import { CreateProductDto, UpdateProdcutDto } from '../dto/product.dto';
 import { ProductService } from '../service/product.service';
 
