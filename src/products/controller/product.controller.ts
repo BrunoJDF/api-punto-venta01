@@ -1,6 +1,8 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, UseInterceptors } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ParseIntPipe } from 'src/shared/parse-int.pipe';
+import { DataResponseInterceptor } from '../constants/data-response-interceptor.interceptor';
+import { ExceptionResponseInterceptor } from '../constants/exception-response.interceptor';
 import { CreateProductDto, UpdateProdcutDto } from '../dto/product.dto';
 import { ProductService } from '../service/product.service';
 
@@ -10,16 +12,18 @@ export class ProductController {
   constructor(private service: ProductService) { }
 
   @Get()
+  @UseInterceptors(DataResponseInterceptor)
   getProducts() {
     return this.service.findAll();
   }
 
   @Post()
-  createProduct(@Body() payload: CreateProductDto) {
+  async createProduct(@Body() payload: CreateProductDto) {
     return this.service.create(payload);
   }
 
   @Get(':id')
+  @UseInterceptors(DataResponseInterceptor)
   getOneProduct(@Param('id', ParseIntPipe) id: number) {
     return this.service.findOne(id);
   }

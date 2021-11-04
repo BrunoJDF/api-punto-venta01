@@ -4,7 +4,7 @@ import { Injectable } from "@nestjs/common";
 export class Message {
 
     notFoundException(id: number, arg: string): string {
-        return 'El ' + arg + ' ' + id + ' no existe';
+        return `El ${arg} con #${id} no existe`;
     }
 
 }
